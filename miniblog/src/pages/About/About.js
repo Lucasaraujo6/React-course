@@ -1,5 +1,7 @@
 import styles from "./About.module.css";
 
+import { Link } from "react-router-dom";
+
 const About = () => {
   const mystyle = {
     width: "100%",
@@ -8,13 +10,22 @@ const About = () => {
   };
 
   return (
-    <div>
-      <h1>About</h1>
-      <div>
+    <div className={styles.about}>
+      <h2>
+        Sobre o Mini <span>Blog</span>
+      </h2>
+      <p>
+        Este projeto consiste em um blog feito com React no front-end e Firebase
+        no Back-end
+      </p>
+      <Link to="/posts/create" className="btn ">
+        Criar Post
+      </Link>
+      {/* <div>
         <object
           type="text/html"
           style={mystyle}
-          data="http://www.kernel.com/"
+          data="http://www.bbc.com/"
         ></object>
       </div>
       <div>
@@ -23,7 +34,7 @@ const About = () => {
           scrolling="yes"
           frameborder="no"
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 };
