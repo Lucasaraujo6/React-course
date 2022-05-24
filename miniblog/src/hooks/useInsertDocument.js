@@ -33,16 +33,16 @@ export const useInsertDocument = (docCollection) => {
   };
 
   const insertDocument = async (document) => {
-    checkCancelBeforeDispatch({
-      type: "LOADING",
-    });
+    checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
       const newDocument = { ...document, createdAt: Timestamp.now() };
+
       const insertedDocument = await addDoc(
         collection(db, docCollection),
         newDocument
       );
+
       checkCancelBeforeDispatch({
         type: "INSERTED_DOC",
         payload: insertedDocument,
@@ -60,5 +60,4 @@ export const useInsertDocument = (docCollection) => {
   }, []);
 
   return { insertDocument, response };
-  
 };
