@@ -21,6 +21,7 @@ const Home = () => {
       return navigate(`/search?q=${query}`);
     }
   };
+  console.table(posts);
 
   return (
     <div className={styles.home}>
